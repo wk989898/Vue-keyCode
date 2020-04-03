@@ -17,11 +17,12 @@
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="../lib/index.js"></script>
   <div id="app">
-    <input type="text" @keyup.page-up="keyup" @keyup.to-up="keyup" @keyup.return="keyup" />
+    <h4>please enter ↑</h4>
+    <input type="text" @keyup.to-up="keyup" @keyup.return="keyup" />
     <p>you enter a keyCode : <strong>{{text}}</strong></p>
     <pre>
       <code>
-        keyCode Map
+  keyCode Map
         
     back: 8,
     return: 13,
@@ -33,7 +34,7 @@
     'page-down': 34,
     end: 35,
     home: 36,
-    // left: 37,
+    left: 37,
     up: 38,
     right: 39,
     down: 40,

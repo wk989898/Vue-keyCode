@@ -12,7 +12,7 @@
 
 ## Useage
 ``` javascript
-import keyCode from "vue-keyCode"
+import keyCode from "vue-keycode"
 import Vue from "vue"
 Vue.use(keyCode[,options])
 ```
