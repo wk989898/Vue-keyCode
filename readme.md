@@ -7,7 +7,7 @@
 
 ## Install
 ```
-> npm install vue-keyCode
+> npm install vue-keycode
 ```
 
 ## Useage
