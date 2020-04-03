@@ -1,0 +1,18 @@
+{
+  "name": "vue-keycode",
+  "version": "1.0.0",
+  "description": "a vue plugin that hack keyCode",
+  "main": "./lib/index.js",
+  "module":"./lib/index.esm.js",
+  "scripts": {
+    "build":"rollup --config ./rollup.config.js"
+  },
+  "author": "wangkun",
+  "license": "ISC",
+  "dependencies": {
+    "rollup": "^2.3.2"
+  },
+  "devDependencies": {
+    "rollup-plugin-babel": "^4.4.0"
+  }
+}

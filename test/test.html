@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue-keyCode</title>
+  <style>
+    code {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: large;
+    }
+  </style>
+</head>
+
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="../lib/index.js"></script>
+  <div id="app">
+    <input type="text" @keyup.page-up="keyup" @keyup.to-up="keyup" @keyup.return="keyup" />
+    <p>you enter a keyCode : <strong>{{text}}</strong></p>
+    <pre>
+      <code>
+        keyCode Map
+        
+    back: 8,
+    return: 13,
+    control: 17,
+    pause: 19, //Pause Break
+    capital: 20, //Caps Lock
+    space: 32,
+    'page-up': 33,
+    'page-down': 34,
+    end: 35,
+    home: 36,
+    // left: 37,
+    up: 38,
+    right: 39,
+    down: 40,
+    insert: 45,
+    delete: 46,
+
+    // A-Z 
+    a: 65,
+    b: 66,
+    c: 67,
+    d: 68,
+    e: 69,
+    f: 70,
+    g: 71,
+    h: 72,
+    i: 73,
+    j: 74,
+    k: 75,
+    l: 76,
+    m: 77,
+    n: 78,
+    o: 79,
+    p: 80,
+    q: 81,
+    r: 82,
+    s: 83,
+    t: 84,
+    u: 85,
+    v: 86,
+    w: 87,
+    x: 88,
+    y: 89,
+    z: 90,
+
+    lwin: 91, //左徽标键
+    rwin: 92, //右徽标键
+    apps: 93, //鼠标右键快捷键
+
+    // 小键盘
+    numpad0: 96,
+    numpad1: 97,
+    numpad2: 98,
+    numpad3: 99,
+    numpad4: 100,
+    numpad5: 101,
+    numpad6: 102,
+    numpad7: 103,
+    numpad8: 104,
+    numpad9: 105,
+    decimal: 110, // .
+    multiply: 106,
+    addition: 107,
+    subtract: 109,
+    divide: 111,
+    // f1-f12
+    f1: 112,
+    f2: 113,
+    f3: 114,
+    f4: 115,
+    f5: 116,
+    f6: 117,
+    f7: 118,
+    f8: 119,
+    f9: 120,
+    f10: 121,
+    f11: 122,
+    f12: 123,
+
+    numlock: 144, //Num Lock
+    scroll: 145 //Scroll Lock
+      </code>
+    </pre>
+  </div>
+  <script>
+    // upper: default false
+    // usrCode: change default keyCode (no camelCase)
+    Vue.use(keyCode, {
+      upper: null,
+      usrCode: {
+        // 38 -> up
+        "to-up":38
+      },
+    })
+    new Vue({
+      el: "#app",
+      data: {
+        text: 'null'
+      },
+      methods: {
+        keyup(e) {
+          console.log(e);
+          this.text = e.key + ' ' + e.keyCode
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
