@@ -17,8 +17,8 @@
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="../lib/index.js"></script>
   <div id="app">
-    <h4>please enter ↑</h4>
-    <input type="text" @keyup.to-up="keyup" @keyup.return="keyup" />
+    <h4>please enter 👆 or 👇</h4>
+    <input type="text" @keyup.to-up="keyup" @keyup.to-down="keyup" />
     <p>you enter a keyCode : <strong>{{text}}</strong></p>
     <pre>
       <code>
@@ -115,7 +115,8 @@
       upper: null,
       usrCode: {
         // 38 -> up
-        "to-up":38
+        "to-up":38,
+        "to-down":"down"
       },
     })
     new Vue({

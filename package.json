@@ -1,12 +1,13 @@
 {
   "name": "vue-keycode",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "description": "a vue plugin that change keyCode",
   "main": "./lib/index.js",
   "scripts": {
     "build":"rollup --config rollup.config.js",
     "test":"start ./test/index.html"
   },
+  "keywords": ["Vue","Vue plugin","keyCode"],
   "author": "wk989898",
   "license": "ISC",
   "dependencies": {

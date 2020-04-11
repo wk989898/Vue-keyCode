@@ -95,6 +95,11 @@ var keyCode = {}
 keyCode.install = function install(Vue, options) {
   let upper = options.Upper || null
   let usrCode = options.usrCode || null
+  for(let [k,v] of Object.entries(usrCode)){
+    if(typeof v==='string'){
+      usrCode[k]=keyCodeList[v]
+    }
+  }
   let keyCodes = Object.assign(keyCodeList, usrCode)
   try {
     for (let [key, code] of Object.entries(keyCodes)) {

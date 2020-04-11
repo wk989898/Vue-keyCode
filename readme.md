@@ -1,42 +1,53 @@
 # Vue-keyCode
 
 ## Intro
-  
-  用于Vue绑定事件中键盘自定义按键修饰符别名  
- >keyCode 的事件用法[已经被废弃了](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode)并可能不会被最新的浏览器支持
+
+用于 Vue 绑定事件中键盘自定义按键修饰符别名
+
+> keyCode 的事件用法[已经被废弃了](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode)并可能不会被最新的浏览器支持
 
 ## Install
+
 ```
 > npm install vue-keycode
 ```
 
 ## Useage
-``` javascript
+
+```javascript
 import keyCode from "vue-keycode"
 import Vue from "vue"
-Vue.use(keyCode[,options])
+Vue.use(keyCode[,options])  
 ```
-### [Example]('./test/index.html'):
-``` html
-<input @keyup.to-up="text=$event.keye+e.keyCode"/>
-<p>{{text}}</p>  //expected: ArrowUp 38
 
-Vue.use(keyCode,{
-  usrCode:{
-    // default 38 -> up
-    "to-up":38
-  }
+### [Example]('./test/index.html'):
+
+```html
+<input @keyup.to-up="text=$event.keye+e.keyCode" />
+<p>{{text}}</p>  // expected: ArrowUp 38
+```
+
+```js
+Vue.use(keyCode, {
+  usrCode: {
+    // default 38 -> up 
+    "to-up": 38,
+    // value must in keyCode map
+    "to-down": "down",
+  },
 })
 ```
 
 ## Options
-|properties|default|intro|
-|----------|-------|-----|
-|upper|false|use capital letter as keyCode|
-|usrCode|- |change default keyCode map|
+
+| properties | default | intro                         |
+| ---------- | ------- | ----------------------------- |
+| upper      | false   | use capital letter as keyCode |
+| usrCode    | -       | change default keyCode map    |
 
 ## keyCode map
-``` json
+
+```json
   back: 8,
   return: 13,
   control: 17,
@@ -54,7 +65,7 @@ Vue.use(keyCode,{
   insert: 45,
   delete: 46,
 
-  // A-Z 
+  // A-Z
   a: 65,
   b: 66,
   c: 67,
@@ -121,4 +132,5 @@ Vue.use(keyCode,{
 ```
 
 ## Note
-* 目前主流浏览器还是支持keyCode事件的，但以后不一定会支持
+
+- 目前主流浏览器还是支持 keyCode 事件的，但以后不一定会支持
